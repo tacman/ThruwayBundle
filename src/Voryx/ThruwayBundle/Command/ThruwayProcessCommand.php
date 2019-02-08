@@ -121,8 +121,8 @@ class ThruwayProcessCommand extends ContainerAwareCommand
      */
     protected function start()
     {
-        $appCmd = "{$this->getContainer()->get('kernel')->getRootDir()}/console";
-        $binCmd = "{$this->getContainer()->get('kernel')->getRootDir()}/../bin/console";
+        $appCmd = "{$this->getContainer()->get('kernel')->getProjectDir()}/console";
+        $binCmd = "{$this->getContainer()->get('kernel')->getProjectDir()}/../bin/console";
 
         $this->consoleCommand = file_exists($binCmd) ? $binCmd : $appCmd;
 
